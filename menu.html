@@ -17,7 +17,7 @@
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: #e8dfd6;
+      background: #e2d4d4;
       color: #2b2b2b;
     }
 
@@ -26,6 +26,8 @@
       margin: 0 auto;
       display: flex;
       flex-direction: column;
+      background-color: #e8dfd6;
+      border-radius: 16px;
     }
 
     .menu__title {
@@ -58,13 +60,32 @@
       flex: 1;
       display: flex;
       flex-direction: column;
-      border: 2px solid #3a342f;
       padding: 12px;
       position: relative;
 
       clip-path: polygon(0% 10px, 10px 0%, calc(100% - 10px) 0%, 100% 10px,
           100% calc(100% - 10px), calc(100% - 10px) 100%,
           10px 100%, 0% calc(100% - 10px));
+    }
+
+
+
+    .column-1::after,
+    .column-2::after,
+    .column-3::after {
+      content: url("/border.svg");
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transform: scaleX(0.80) translateX(-20px);
+      z-index: -1;
+    }
+
+    .column-2::after,
+    .column-3::after {
+      transform: scaleX(0.66) translateX(-39px);
     }
 
     .menu__section {
@@ -106,6 +127,11 @@
       width: 60px;
       height: 60px;
       flex-shrink: 0;
+      background-image: url('/images/valimere-pizza.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      z-index: 3;
     }
 
     .menu__content {
@@ -150,6 +176,7 @@
       justify-content: flex-end;
       gap: 12px;
       padding: 8px 12px;
+      clip-path: polygon(20px 0%, 100% 5px, 100% calc(100% - 20px), calc(100% - 20px) 100%, 5px 100%, 0% calc(100% - 5px));
     }
 
     .menu__legend-item {
@@ -167,7 +194,6 @@
       height: 16px;
       background: rgba(255, 255, 255, 0.5);
     }
-
   </style>
 </head>
 
@@ -180,14 +206,14 @@
     <div class="menu__columns">
 
       <!-- COLUMN 1 -->
-      <div class="menu__column">
+      <div class="menu__column column-1">
 
         <div class="menu__section">
           <div class="menu__section-title">BURGERID</div>
 
           <!-- 3 items -->
           <div class="menu__item">
-            <div class="menu__img"><svg /></div>
+            <div class="menu__img"></div>
             <div class="menu__content">
               <div class="menu__name">Hollywood Burger</div>
               <span class="menu__meta">beef, cheese</span>
@@ -199,7 +225,7 @@
           </div>
 
           <div class="menu__item">
-            <div class="menu__img"><svg /></div>
+            <div class="menu__img"></div>
             <div class="menu__content">
               <div class="menu__name">Obama Burger</div><span class="menu__meta">chicken</span><span
                 class="menu__meta">Barack Obama</span><span class="menu__meta">President</span><span
@@ -208,7 +234,7 @@
           </div>
 
           <div class="menu__item">
-            <div class="menu__img"><svg /></div>
+            <div class="menu__img"></div>
             <div class="menu__content">
               <div class="menu__name">California Burger</div><span class="menu__meta">beef</span><span
                 class="menu__meta">Arnold</span><span class="menu__meta">Actor</span><span class="menu__allergy--free">M
@@ -222,7 +248,7 @@
           <div class="menu__section-title">PIZZA</div>
 
           <div class="menu__item">
-            <div class="menu__img"><svg /></div>
+            <div class="menu__img"></div>
             <div class="menu__content">
               <div class="menu__name">Sea Pizza</div><span class="menu__meta">seafood</span><span
                 class="menu__meta">Penelope Cruz</span><span class="menu__meta">Actress</span><span
@@ -231,7 +257,7 @@
           </div>
 
           <div class="menu__item">
-            <div class="menu__img"><svg /></div>
+            <div class="menu__img"></div>
             <div class="menu__content">
               <div class="menu__name">Margarita</div><span class="menu__meta">cheese</span><span
                 class="menu__meta">Sophia Loren</span><span class="menu__meta">Legend</span><span
@@ -240,7 +266,7 @@
           </div>
 
           <div class="menu__item">
-            <div class="menu__img"><svg /></div>
+            <div class="menu__img"></div>
             <div class="menu__content">
               <div class="menu__name">Custom Pizza</div><span class="menu__meta">any</span><span
                 class="menu__meta">You</span><span class="menu__meta">Chef</span><span
@@ -254,7 +280,7 @@
           <div class="menu__section-title">PASTA</div>
 
           <div class="menu__item">
-            <div class="menu__img"><svg /></div>
+            <div class="menu__img"></div>
             <div class="menu__content">
               <div class="menu__name">Cream Pasta</div><span class="menu__meta">cream</span><span
                 class="menu__meta">Brad Pitt</span><span class="menu__meta">Actor</span><span
@@ -263,7 +289,7 @@
           </div>
 
           <div class="menu__item">
-            <div class="menu__img"><svg /></div>
+            <div class="menu__img"></div>
             <div class="menu__content">
               <div class="menu__name">Napoli</div><span class="menu__meta">tomato</span><span class="menu__meta">Monica
                 Bellucci</span><span class="menu__meta">Actress</span><span class="menu__allergy--free">V</span><span
@@ -272,7 +298,7 @@
           </div>
 
           <div class="menu__item">
-            <div class="menu__img"><svg /></div>
+            <div class="menu__img"></div>
             <div class="menu__content">
               <div class="menu__name">Nordic</div><span class="menu__meta">fish</span><span
                 class="menu__meta">Mads</span><span class="menu__meta">Actor</span><span
@@ -286,7 +312,7 @@
           <div class="menu__section-title">SALAD</div>
 
           <div class="menu__item">
-            <div class="menu__img"><svg /></div>
+            <div class="menu__img"></div>
             <div class="menu__content">
               <div class="menu__name">Caesar</div><span class="menu__meta">chicken</span><span
                 class="menu__meta">Clooney</span><span class="menu__meta">Actor</span><span
@@ -295,7 +321,7 @@
           </div>
 
           <div class="menu__item">
-            <div class="menu__img"><svg /></div>
+            <div class="menu__img"></div>
             <div class="menu__content">
               <div class="menu__name">Blue Cheese</div><span class="menu__meta">cheese</span><span
                 class="menu__meta">Winslet</span><span class="menu__meta">Actress</span><span
@@ -304,7 +330,7 @@
           </div>
 
           <div class="menu__item">
-            <div class="menu__img"><svg /></div>
+            <div class="menu__img"></div>
             <div class="menu__content">
               <div class="menu__name">Greek</div><span class="menu__meta">vegan</span><span
                 class="menu__meta">Reeves</span><span class="menu__meta">Actor</span><span
@@ -319,252 +345,252 @@
       <div class="menu__columns-right">
         <div class="menu__columns-right-top">
 
-      <!-- COLUMN 2 -->
-      <div class="menu__column">
+          <!-- COLUMN 2 -->
+          <div class="menu__column column-2">
 
-        <div class="menu__section">
-          <div class="menu__section-title">SUPID</div>
+            <div class="menu__section">
+              <div class="menu__section-title">SUPID</div>
 
-          <div class="menu__item">
-            <div class="menu__img"><svg /></div>
-            <div class="menu__content">
-              <div class="menu__name">Soup</div><span class="menu__meta">vegetables</span><span
-                class="menu__meta">Vysotsky</span><span class="menu__meta">Singer</span><span
-                class="menu__allergy--free">M</span><span class="menu__meta">/ V</span>
+              <div class="menu__item">
+                <div class="menu__img"></div>
+                <div class="menu__content">
+                  <div class="menu__name">Soup</div><span class="menu__meta">vegetables</span><span
+                    class="menu__meta">Vysotsky</span><span class="menu__meta">Singer</span><span
+                    class="menu__allergy--free">M</span><span class="menu__meta">/ V</span>
+                </div>
+              </div>
+
+              <div class="menu__item">
+                <div class="menu__img"></div>
+                <div class="menu__content">
+                  <div class="menu__name">Cream Soup</div><span class="menu__meta">cream</span><span
+                    class="menu__meta">President</span><span class="menu__meta">Leader</span><span
+                    class="menu__allergy--free">V</span><span class="menu__meta">/ M</span>
+                </div>
+              </div>
+
             </div>
+
+            <div class="menu__section">
+              <div class="menu__section-title">PRAED</div>
+
+              <!-- 8 items -->
+              <div class="menu__item">
+                <div class="menu__img"></div>
+                <div class="menu__content">
+                  <div class="menu__name">Ribs</div><span class="menu__meta">meat</span><span
+                    class="menu__meta">Elvis</span><span class="menu__meta">Singer</span><span
+                    class="menu__allergy--free">M</span><span class="menu__meta">/ V</span>
+                </div>
+              </div>
+
+              <!-- копируем ещё 7 -->
+              <div class="menu__item">
+                <div class="menu__img"></div>
+                <div class="menu__content">
+                  <div class="menu__name">Steak</div><span class="menu__meta">beef</span><span
+                    class="menu__meta">Rock</span><span class="menu__meta">Actor</span><span
+                    class="menu__allergy--free">M</span><span class="menu__meta">/ V</span>
+                </div>
+              </div>
+
+              <div class="menu__item">
+                <div class="menu__img"></div>
+                <div class="menu__content">
+                  <div class="menu__name">Snitzel</div><span class="menu__meta">meat</span><span
+                    class="menu__meta">Hanks</span><span class="menu__meta">Actor</span><span
+                    class="menu__allergy--free">M</span><span class="menu__meta">/ V</span>
+                </div>
+              </div>
+
+              <div class="menu__item">
+                <div class="menu__img"></div>
+                <div class="menu__content">
+                  <div class="menu__name">Fish</div><span class="menu__meta">fish</span><span
+                    class="menu__meta">Jackman</span><span class="menu__meta">Actor</span><span
+                    class="menu__allergy--free">M</span><span class="menu__meta">/ V</span>
+                </div>
+              </div>
+
+              <div class="menu__item">
+                <div class="menu__img"></div>
+                <div class="menu__content">
+                  <div class="menu__name">Falafel</div><span class="menu__meta">vegan</span><span
+                    class="menu__meta">Jamie</span><span class="menu__meta">Chef</span><span
+                    class="menu__allergy--free">V</span><span class="menu__meta">/ M</span>
+                </div>
+              </div>
+
+              <div class="menu__item">
+                <div class="menu__img"></div>
+                <div class="menu__content">
+                  <div class="menu__name">Cheese</div><span class="menu__meta">cheese</span><span
+                    class="menu__meta">Carrey</span><span class="menu__meta">Actor</span><span
+                    class="menu__allergy--free">M</span><span class="menu__meta">/ V</span>
+                </div>
+              </div>
+
+              <div class="menu__item">
+                <div class="menu__img"></div>
+                <div class="menu__content">
+                  <div class="menu__name">Steak 2</div><span class="menu__meta">beef</span><span
+                    class="menu__meta">Rock</span><span class="menu__meta">Actor</span><span
+                    class="menu__allergy--free">M</span><span class="menu__meta">/ V</span>
+                </div>
+              </div>
+
+              <div class="menu__item">
+                <div class="menu__img"></div>
+                <div class="menu__content">
+                  <div class="menu__name">Chicken</div><span class="menu__meta">chicken</span><span
+                    class="menu__meta">Aniston</span><span class="menu__meta">Actress</span><span
+                    class="menu__allergy--free">M</span><span class="menu__meta">/ V</span>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="menu__section">
+              <div class="menu__section-title">LISANDID</div>
+
+              <div class="menu__item">
+                <div class="menu__content">
+                  <span class="menu__meta">potato / rice / pasta</span>
+                  <span class="menu__allergy--free">M L G V</span>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="menu__footer-space"></div>
+
           </div>
 
-          <div class="menu__item">
-            <div class="menu__img"><svg /></div>
-            <div class="menu__content">
-              <div class="menu__name">Cream Soup</div><span class="menu__meta">cream</span><span
-                class="menu__meta">President</span><span class="menu__meta">Leader</span><span
-                class="menu__allergy--free">V</span><span class="menu__meta">/ M</span>
+          <!-- COLUMN 3 -->
+          <div class="menu__column column-3">
+
+            <div class="menu__section">
+              <div class="menu__section-title">MUU</div>
+
+              <div class="menu__item">
+                <div class="menu__img"></div>
+                <div class="menu__content">
+                  <div class="menu__name">Paella</div><span class="menu__meta">rice</span><span
+                    class="menu__meta">Banderas</span><span class="menu__meta">Actor</span><span
+                    class="menu__allergy--free">M</span><span class="menu__meta">/ V</span>
+                </div>
+              </div>
+
+              <div class="menu__item">
+                <div class="menu__img"></div>
+                <div class="menu__content">
+                  <div class="menu__name">Risotto</div><span class="menu__meta">rice</span><span
+                    class="menu__meta">Pacino</span><span class="menu__meta">Actor</span><span
+                    class="menu__allergy--free">M</span><span class="menu__meta">/ V</span>
+                </div>
+              </div>
+
+              <div class="menu__item">
+                <div class="menu__img"></div>
+                <div class="menu__content">
+                  <div class="menu__name">Mujadara</div><span class="menu__meta">lentils</span><span
+                    class="menu__meta">Gadot</span><span class="menu__meta">Actress</span><span
+                    class="menu__allergy--free">V</span><span class="menu__meta">/ M</span>
+                </div>
+              </div>
+
             </div>
+
+            <div class="menu__section">
+              <div class="menu__section-title">LASTEMENÜÜ</div>
+
+              <div class="menu__item">
+                <div class="menu__img"></div>
+                <div class="menu__content">
+                  <div class="menu__name">Fries</div><span class="menu__meta">potato</span><span
+                    class="menu__meta">Culkin</span><span class="menu__meta">Actor</span><span
+                    class="menu__allergy--free">V</span><span class="menu__meta">/ M</span>
+                </div>
+              </div>
+
+              <div class="menu__item">
+                <div class="menu__img"></div>
+                <div class="menu__content">
+                  <div class="menu__name">Sausage</div><span class="menu__meta">meat</span><span
+                    class="menu__meta">Atkinson</span><span class="menu__meta">Actor</span><span
+                    class="menu__allergy--free">M</span><span class="menu__meta">/ V</span>
+                </div>
+              </div>
+
+              <div class="menu__item">
+                <div class="menu__img"></div>
+                <div class="menu__content">
+                  <div class="menu__name">Pasta</div><span class="menu__meta">pasta</span><span
+                    class="menu__meta">Fanning</span><span class="menu__meta">Actress</span><span
+                    class="menu__allergy--free">V</span><span class="menu__meta">/ M</span>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="menu__section">
+              <div class="menu__section-title">DESSERDID</div>
+
+              <!-- 4 -->
+              <div class="menu__item">
+                <div class="menu__img"></div>
+                <div class="menu__content">
+                  <div class="menu__name">Tiramisu</div><span class="menu__meta">cream</span><span
+                    class="menu__meta">Hepburn</span><span class="menu__meta">Actress</span><span
+                    class="menu__allergy--free">M</span><span class="menu__meta">/ V</span>
+                </div>
+              </div>
+
+              <div class="menu__item">
+                <div class="menu__img"></div>
+                <div class="menu__content">
+                  <div class="menu__name">Cheesecake</div><span class="menu__meta">cheese</span><span
+                    class="menu__meta">Monroe</span><span class="menu__meta">Actress</span><span
+                    class="menu__allergy--free">M</span><span class="menu__meta">/ V</span>
+                </div>
+              </div>
+
+              <div class="menu__item">
+                <div class="menu__img"></div>
+                <div class="menu__content">
+                  <div class="menu__name">Ice Cream</div><span class="menu__meta">milk</span><span
+                    class="menu__meta">Hanks</span><span class="menu__meta">Actor</span><span
+                    class="menu__allergy--free">M</span><span class="menu__meta">/ V</span>
+                </div>
+              </div>
+
+              <div class="menu__item">
+                <div class="menu__img"></div>
+                <div class="menu__content">
+                  <div class="menu__name">Pie</div><span class="menu__meta">sweet</span><span
+                    class="menu__meta">Chef</span><span class="menu__meta">Cook</span><span
+                    class="menu__allergy--free">M</span><span class="menu__meta">/ V</span>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="menu__footer-space"></div>
+
           </div>
 
         </div>
 
-        <div class="menu__section">
-          <div class="menu__section-title">PRAED</div>
-
-          <!-- 8 items -->
-          <div class="menu__item">
-            <div class="menu__img"><svg /></div>
-            <div class="menu__content">
-              <div class="menu__name">Ribs</div><span class="menu__meta">meat</span><span
-                class="menu__meta">Elvis</span><span class="menu__meta">Singer</span><span
-                class="menu__allergy--free">M</span><span class="menu__meta">/ V</span>
-            </div>
-          </div>
-
-          <!-- копируем ещё 7 -->
-          <div class="menu__item">
-            <div class="menu__img"><svg /></div>
-            <div class="menu__content">
-              <div class="menu__name">Steak</div><span class="menu__meta">beef</span><span
-                class="menu__meta">Rock</span><span class="menu__meta">Actor</span><span
-                class="menu__allergy--free">M</span><span class="menu__meta">/ V</span>
-            </div>
-          </div>
-
-          <div class="menu__item">
-            <div class="menu__img"><svg /></div>
-            <div class="menu__content">
-              <div class="menu__name">Snitzel</div><span class="menu__meta">meat</span><span
-                class="menu__meta">Hanks</span><span class="menu__meta">Actor</span><span
-                class="menu__allergy--free">M</span><span class="menu__meta">/ V</span>
-            </div>
-          </div>
-
-          <div class="menu__item">
-            <div class="menu__img"><svg /></div>
-            <div class="menu__content">
-              <div class="menu__name">Fish</div><span class="menu__meta">fish</span><span
-                class="menu__meta">Jackman</span><span class="menu__meta">Actor</span><span
-                class="menu__allergy--free">M</span><span class="menu__meta">/ V</span>
-            </div>
-          </div>
-
-          <div class="menu__item">
-            <div class="menu__img"><svg /></div>
-            <div class="menu__content">
-              <div class="menu__name">Falafel</div><span class="menu__meta">vegan</span><span
-                class="menu__meta">Jamie</span><span class="menu__meta">Chef</span><span
-                class="menu__allergy--free">V</span><span class="menu__meta">/ M</span>
-            </div>
-          </div>
-
-          <div class="menu__item">
-            <div class="menu__img"><svg /></div>
-            <div class="menu__content">
-              <div class="menu__name">Cheese</div><span class="menu__meta">cheese</span><span
-                class="menu__meta">Carrey</span><span class="menu__meta">Actor</span><span
-                class="menu__allergy--free">M</span><span class="menu__meta">/ V</span>
-            </div>
-          </div>
-
-          <div class="menu__item">
-            <div class="menu__img"><svg /></div>
-            <div class="menu__content">
-              <div class="menu__name">Steak 2</div><span class="menu__meta">beef</span><span
-                class="menu__meta">Rock</span><span class="menu__meta">Actor</span><span
-                class="menu__allergy--free">M</span><span class="menu__meta">/ V</span>
-            </div>
-          </div>
-
-          <div class="menu__item">
-            <div class="menu__img"><svg /></div>
-            <div class="menu__content">
-              <div class="menu__name">Chicken</div><span class="menu__meta">chicken</span><span
-                class="menu__meta">Aniston</span><span class="menu__meta">Actress</span><span
-                class="menu__allergy--free">M</span><span class="menu__meta">/ V</span>
-            </div>
-          </div>
-
+        <div class="menu__legend">
+          <div class="menu__legend-item">M - Meat</div>
+          <div class="menu__legend-item">V - Vegetarian</div>
+          <div class="menu__legend-item">L - Lactose free</div>
+          <div class="menu__legend-item">G - Gluten free</div>
+          <div class="menu__legend-item">— - Not available</div>
+          <div class="menu__legend-item">Actor - Famous actor</div>
+          <div class="menu__legend-item">Actress - Famous actress</div>
+          <div class="menu__legend-item">Legend - Iconic person</div>
         </div>
-
-        <div class="menu__section">
-          <div class="menu__section-title">LISANDID</div>
-
-          <div class="menu__item">
-            <div class="menu__content">
-              <span class="menu__meta">potato / rice / pasta</span>
-              <span class="menu__allergy--free">M L G V</span>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="menu__footer-space"></div>
-
-      </div>
-
-      <!-- COLUMN 3 -->
-      <div class="menu__column">
-
-        <div class="menu__section">
-          <div class="menu__section-title">MUU</div>
-
-          <div class="menu__item">
-            <div class="menu__img"><svg /></div>
-            <div class="menu__content">
-              <div class="menu__name">Paella</div><span class="menu__meta">rice</span><span
-                class="menu__meta">Banderas</span><span class="menu__meta">Actor</span><span
-                class="menu__allergy--free">M</span><span class="menu__meta">/ V</span>
-            </div>
-          </div>
-
-          <div class="menu__item">
-            <div class="menu__img"><svg /></div>
-            <div class="menu__content">
-              <div class="menu__name">Risotto</div><span class="menu__meta">rice</span><span
-                class="menu__meta">Pacino</span><span class="menu__meta">Actor</span><span
-                class="menu__allergy--free">M</span><span class="menu__meta">/ V</span>
-            </div>
-          </div>
-
-          <div class="menu__item">
-            <div class="menu__img"><svg /></div>
-            <div class="menu__content">
-              <div class="menu__name">Mujadara</div><span class="menu__meta">lentils</span><span
-                class="menu__meta">Gadot</span><span class="menu__meta">Actress</span><span
-                class="menu__allergy--free">V</span><span class="menu__meta">/ M</span>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="menu__section">
-          <div class="menu__section-title">LASTEMENÜÜ</div>
-
-          <div class="menu__item">
-            <div class="menu__img"><svg /></div>
-            <div class="menu__content">
-              <div class="menu__name">Fries</div><span class="menu__meta">potato</span><span
-                class="menu__meta">Culkin</span><span class="menu__meta">Actor</span><span
-                class="menu__allergy--free">V</span><span class="menu__meta">/ M</span>
-            </div>
-          </div>
-
-          <div class="menu__item">
-            <div class="menu__img"><svg /></div>
-            <div class="menu__content">
-              <div class="menu__name">Sausage</div><span class="menu__meta">meat</span><span
-                class="menu__meta">Atkinson</span><span class="menu__meta">Actor</span><span
-                class="menu__allergy--free">M</span><span class="menu__meta">/ V</span>
-            </div>
-          </div>
-
-          <div class="menu__item">
-            <div class="menu__img"><svg /></div>
-            <div class="menu__content">
-              <div class="menu__name">Pasta</div><span class="menu__meta">pasta</span><span
-                class="menu__meta">Fanning</span><span class="menu__meta">Actress</span><span
-                class="menu__allergy--free">V</span><span class="menu__meta">/ M</span>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="menu__section">
-          <div class="menu__section-title">DESSERDID</div>
-
-          <!-- 4 -->
-          <div class="menu__item">
-            <div class="menu__img"><svg /></div>
-            <div class="menu__content">
-              <div class="menu__name">Tiramisu</div><span class="menu__meta">cream</span><span
-                class="menu__meta">Hepburn</span><span class="menu__meta">Actress</span><span
-                class="menu__allergy--free">M</span><span class="menu__meta">/ V</span>
-            </div>
-          </div>
-
-          <div class="menu__item">
-            <div class="menu__img"><svg /></div>
-            <div class="menu__content">
-              <div class="menu__name">Cheesecake</div><span class="menu__meta">cheese</span><span
-                class="menu__meta">Monroe</span><span class="menu__meta">Actress</span><span
-                class="menu__allergy--free">M</span><span class="menu__meta">/ V</span>
-            </div>
-          </div>
-
-          <div class="menu__item">
-            <div class="menu__img"><svg /></div>
-            <div class="menu__content">
-              <div class="menu__name">Ice Cream</div><span class="menu__meta">milk</span><span
-                class="menu__meta">Hanks</span><span class="menu__meta">Actor</span><span
-                class="menu__allergy--free">M</span><span class="menu__meta">/ V</span>
-            </div>
-          </div>
-
-          <div class="menu__item">
-            <div class="menu__img"><svg /></div>
-            <div class="menu__content">
-              <div class="menu__name">Pie</div><span class="menu__meta">sweet</span><span
-                class="menu__meta">Chef</span><span class="menu__meta">Cook</span><span
-                class="menu__allergy--free">M</span><span class="menu__meta">/ V</span>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="menu__footer-space"></div>
-        
-      </div>
-
-        </div>
-
-    <div class="menu__legend">
-      <div class="menu__legend-item">M - Meat</div>
-      <div class="menu__legend-item">V - Vegetarian</div>
-      <div class="menu__legend-item">L - Lactose free</div>
-      <div class="menu__legend-item">G - Gluten free</div>
-      <div class="menu__legend-item">— - Not available</div>
-      <div class="menu__legend-item">Actor - Famous actor</div>
-      <div class="menu__legend-item">Actress - Famous actress</div>
-      <div class="menu__legend-item">Legend - Iconic person</div>
-    </div>
 
       </div>
 
